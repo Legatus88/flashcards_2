@@ -1,5 +1,10 @@
 language: ruby
 
+env: RAILS_ENV=test
+
+rvm:
+ - 2.5.1
+
 services:
   - postgres
 
@@ -7,5 +12,3 @@ before_script:
   - psql -c 'create database flashcards_2_test;' -U postgres
   - bin/rails db:migrate RAILS_ENV=test
   - cp database.yml.travis config/database.yml
-rvm:
- - 2.5.1
