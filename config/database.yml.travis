@@ -1,4 +1,0 @@
-test:
-  adapter: postgresql
-  database: flashcards_2_test
-  username: postgres
