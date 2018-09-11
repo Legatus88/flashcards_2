@@ -5,6 +5,7 @@ services:
 
 before_script:
   - psql -c 'create database flashcards_2_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
 
 rvm:
  - 2.5.1
