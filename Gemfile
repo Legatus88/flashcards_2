@@ -42,6 +42,10 @@ group :development, :test do
   gem 'factory_bot_rails'
 end
 
+group :development do
+  gem 'listen'
+end
+
 gem "rubocop-rails_config"
 gem 'omniauth-twitter'
 gem "paperclip", "~> 6.0.0"
