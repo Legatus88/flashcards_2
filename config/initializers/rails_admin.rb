@@ -1,11 +1,11 @@
 RailsAdmin.config do |config|
   
-  config.parent_controller = '::ApplicationController'
+  #config.parent_controller = '::ApplicationController'
   
 
-  #config.authorize_with do 
-  #  redirect_to main_app.root_path unless current_user && current_user.admin
-  #end
+  config.authorize_with do 
+    redirect_to main_app.root_path unless current_user && current_user.admin
+  end
 
 
   ### Popular gems integration
@@ -20,7 +20,7 @@ RailsAdmin.config do |config|
   # config.authorize_with :cancan
 
   ## == Pundit ==
-  config.authorize_with :pundit
+  # config.authorize_with :pundit
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
