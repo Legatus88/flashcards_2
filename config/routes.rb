@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   filter :locale
 
   root 'main#index'
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   scope module: 'home' do
     resources :user_sessions, only: [:new, :create]
     resources :users, only: [:new, :create]
+    get '/users' => 'users#index'
     get 'login' => 'user_sessions#new', :as => :login
 
     post 'oauth/callback' => 'oauths#callback'
