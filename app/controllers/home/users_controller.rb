@@ -1,5 +1,10 @@
 class Home::UsersController < Home::BaseController
 
+  def index
+    @users = User.all
+    authorize @users
+  end
+
   def new
     if current_user
       redirect_to root_path
